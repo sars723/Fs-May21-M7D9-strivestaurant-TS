@@ -12,7 +12,7 @@ const MyNav = (props:MixedProps) => (
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-           {/*  <Nav className="ml-auto">
+            <Nav className="ml-auto">
                 <Link to="/">
                     <div className={props.location.pathname === '/' ? 'nav-link active' : 'nav-link'}>Home</div>
                 </Link>
@@ -22,7 +22,7 @@ const MyNav = (props:MixedProps) => (
                 <Link to="/reservations">
                     <div className={props.location.pathname === '/reservations' ? 'nav-link active' : 'nav-link'}>Reservation</div>
                 </Link>
-            </Nav> */}
+            </Nav>
         </Navbar.Collapse>
     </Navbar>
 )

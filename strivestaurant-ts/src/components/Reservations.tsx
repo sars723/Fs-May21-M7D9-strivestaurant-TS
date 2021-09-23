@@ -6,7 +6,7 @@ import ReservationForm from './ReservationForm'
 
 const Reservations = () => {
 
-    const [reservations, setReservations] = useState([])
+    const [reservations, setReservations] = useState<any>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
@@ -40,7 +40,7 @@ const Reservations = () => {
                         )
                             ? <p>NO RESERVATIONS</p>
                             : <ListGroup>
-                                {reservations.map(reservation =>
+                                {reservations.map((reservation:any) =>
                                     <ListGroup.Item key={reservation._id}>
                                         {reservation.name}
                                     </ListGroup.Item>
