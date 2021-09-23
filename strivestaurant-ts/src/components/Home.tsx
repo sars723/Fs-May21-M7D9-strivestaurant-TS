@@ -27,6 +27,8 @@ interface HomeProps{
 const Home = ({ title }:HomeProps) => {
   const [selected, setSelected] = useState<any>(null)
   const [dishes,setDishes]=useState<any>([])
+/*   const [selected, setSelected] = useState<Dishes | null >(null)
+  const [dishes,setDishes]=useState<Dishes[]>([]) */
 useEffect(()=>{
   setDishes(dishess)
 })

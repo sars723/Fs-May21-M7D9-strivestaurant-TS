@@ -4,9 +4,15 @@ import Loading from './Loading'
 import Error from './Error'
 import ReservationForm from './ReservationForm'
 
+interface Reservation{
+    id_:string,
+    name:string
+}
+
 const Reservations = () => {
 
-    const [reservations, setReservations] = useState<any>([])
+    /* const [reservations, setReservations] = useState<any>([]) */
+    const [reservations, setReservations] = useState<Reservation[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
@@ -16,6 +22,7 @@ const Reservations = () => {
                 let response = await fetch('https://striveschool.herokuapp.com/api/reservation')
                 let newReservations = await response.json()
                 setReservations(newReservations)
+                console.log(newReservations)
                 setIsLoading(false)
             } catch (error) {
                 console.log(error)
