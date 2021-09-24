@@ -1,42 +1,21 @@
 import { Carousel, Col, Container, Row } from 'react-bootstrap'
-import dishess from '../data/menu.json'
+import dishes from '../data/menu.json'
 import { useState,useEffect } from 'react'
 import DishComments from './DishComments'
-/* import upperName from '../helpers/lib' */
+import { Dish } from '../types/interfaces'
+import upperName from '../helpers/lib'
 
 interface HomeProps{
   title:string
 }
-  interface Dishes{ 
-     id:number,
-    name:string,
-    image:string,
-    label:string,
-    price:string,
-    description:string,
-    comments:[
-      {
-        id:number,
-        rating:number,
-        comment:string,
-        date:string
-      }
-    ]
-  } 
-
+ 
 const Home = ({ title }:HomeProps) => {
-  const [selected, setSelected] = useState<any>(null)
-  const [dishes,setDishes]=useState<any>([])
-/*   const [selected, setSelected] = useState<Dishes | null >(null)
-  const [dishes,setDishes]=useState<Dishes[]>([]) */
-useEffect(()=>{
-  setDishes(dishess)
-})
+  const [selected, setSelected] = useState<Dish |null>(null)
   return (
     <Container>
       <Row className="justify-content-center mt-3">
         <Col xs={12} md={6}>
-          <h1>Welcome to {title}!</h1>
+          <h1>Welcome to{upperName(title)}</h1>
           <h3 className="text-center mb-4">We can only cook pasta...</h3>
           <Carousel>
             {dishes.map((dish:any, i:any) => (

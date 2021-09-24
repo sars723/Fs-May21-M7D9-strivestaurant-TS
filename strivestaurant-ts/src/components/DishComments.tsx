@@ -1,21 +1,7 @@
 import { Container, Row, Col, ListGroup } from "react-bootstrap"
-
+import { Dish } from '../types/interfaces'
 interface DishCommentsProps{
-   selectedPasta:{
-        id:number,
-    name:string,
-    image:string,
-    label:string,
-    price:string,
-    description:string,
-    comments:
-      [{
-        id:number,
-        rating:number,
-        comment:string,
-        date:string
-      }]
-    }
+   selectedPasta:Dish| null
 }
 const DishComments = ({ selectedPasta }:DishCommentsProps) => (
     <Container>
